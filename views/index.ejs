@@ -1,0 +1,14 @@
+<%- include('header') -%>
+<main>
+    
+    <% if (locals.isLogged === true) { %>
+                    <a href="/logout" class="a-compte">Deconnexion</a>
+                <% } else { %>
+                <a href="/createUser" class="a-compte">Création de compte</a>
+                    <a href="/login" class="a-compte">Connexion</a>
+                <% } %>
+    
+</main>
+<%- include('footer') -%>
+
+

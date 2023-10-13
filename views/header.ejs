@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hood Boxing Club</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="https://kit.fontawesome.com/b7e5567521.js" crossorigin="anonymous"></script>
+    </head>
+</html>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="/"><i class="fas fa-home"></i></a></li>
+                <% if (locals.isLogged === true) { %>
+                    <li class="nav-item"><a href="/compteUser">Compte</a></li>
+                <% } %>
+                
+                <li class="nav-item"><a href="/Histoire">Histoire</a></li>
+                <li class="nav-item"><a href="/">Accueil</a></li>
+                <li class="nav-item"><a href="#">Planning</a></li>
+                <li class="nav-item"><a href="/contactForm">Contact</a></li>
+                
+            </ul>
+            
+        </nav>
+    </header>
+

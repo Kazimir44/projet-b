@@ -1,0 +1,21 @@
+<%- include('header') -%>
+
+<body>
+    <h1 class="h1compteUser">Mon Compte</h1>
+
+        <div class="user-info">
+            <p><strong>Prénom:</strong> <%= user.prename %></p>
+            <p><strong>Nom:</strong> <%= user.name %></p>
+            <p><strong>Email:</strong> <%= user.email %></p>
+            <p><strong>Âge:</strong> <%= user.age %> ans</p>
+            <p><strong>Adresse:</strong> <%= user.adresse %></p>
+            <p><strong>Rôle:</strong> <%= user.role %></p>
+        </div>
+
+            <button class="edit-btn">Modifier</button>
+            <a href="/deleteUser" class="delete-btn">Supprimer</a>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
