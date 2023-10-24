@@ -1,8 +1,8 @@
 import query from '../../database.js';
 
 export default (req, res) => {
-    const userId = req.session.user.id; // Supposons que l'ID de l'utilisateur soit passé comme paramètre d'URL
-
+    const userId = req.session.user.id;
+    
     query(
         'SELECT * FROM User WHERE id = ?', [userId],
         (error, results) => {

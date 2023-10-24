@@ -1,0 +1,37 @@
+<%- include('header') -%>
+<main class="admin-page">
+    <h2 class="admin-welcome">GESTION DES COMMANDES</h2>
+    <form method='POST' action="/commande/delete" class="user-form">
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th class="user-column">Choix produit</th>
+                    <th class="user-column">Taille</th>
+                    <th class="user-column">Quantité</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <% for (const commande of commandes) { %>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="commandeToDelete[]" value="<%= commande.idProduitCommande %>" class="user-checkbox">
+                        <%= commande.productName %>
+                    </td>
+                    <td><%= commande.taille %></td>
+                    <td><%= commande.quantite %></td>
+                    <td><a href="/commande/update/<%= commande.idProduitCommande %>" class="user-action">Modifier</a></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <p>
+            <button type="submit" class="delete-button">Supprimer</button>
+        </p>
+        <p>
+            <a class="retour" href="/adminuser">RETOUR</a>
+        </p>
+    </form>
+
+</main>
+<%- include('footer') -%>

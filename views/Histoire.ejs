@@ -1,17 +1,16 @@
 <%- include('header') -%>
+
 <body>
-    <header>
+    <div class="divHistoire">
         <h1>Histoire du Club de Boxe</h1>
-        <nav>
+        <nav class="navHistoire">
             <ul>
-                <li ><a href="#">Accueil</a></li>
-                <li ><a href="#">Histoire</a></li>
-                <li ><a href="#">Entraîneurs</a></li>
-                <li ><a href="#">Événements</a></li>
-                <li ><a href="#">Contact</a></li>
+                <li ><a href="/Histoire">Histoire</a></li>
+                <li ><a href="/Entraineur">Entraîneurs</a></li>
+                <li ><a href="Evenement">Événements</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
 
     <main>
         <section class="club-history">
@@ -35,8 +34,4 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Club de Boxe. Tous droits réservés.</p>
-    </footer>
-</body>
-</html>
+    <%- include('footer') -%>

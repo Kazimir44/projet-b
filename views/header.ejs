@@ -4,24 +4,64 @@
         <title>Hood Boxing Club</title>
         <link rel="stylesheet" href="/css/style.css">
         <script src="https://kit.fontawesome.com/b7e5567521.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap" rel="stylesheet">
     </head>
-</html>
+    
+
 <body>
     <header>
-        <nav>
+        <div class="divLogo">
+           <a href="/"> <img src="image/logo.png" alt="Hood-Boxing-Club" class="logo"> </a>
+            </div>
+            <% if (locals.isLogged === true) { %>
+                        <a href="/logout" class="a-compte">Deconnexion</a>
+                             <% } else { %>
+                                <a href="/createUser" class="a-compte">Création de compte</a>
+                            <a href="/login" class="a-compte">Connexion</a>
+                        <% } %>
+        <div id="menu">
+        <div id="menu-bar" onclick="menuOnClick()">
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+  </div>
+  
+        <nav class="nav" id="nav">
+            
             <ul>
-                <li class="nav-item"><a href="/"><i class="fas fa-home"></i></a></li>
-                <% if (locals.isLogged === true) { %>
+                <% if (locals.isLogged && locals.user.role === "admin") { %>
+                    <li class="nav-item"><a href="/compteAdmin">Admin</a></li>
+                <% } %>
+                
+                 <% if (locals.isLogged === true) { %>
                     <li class="nav-item"><a href="/compteUser">Compte</a></li>
                 <% } %>
                 
-                <li class="nav-item"><a href="/Histoire">Histoire</a></li>
                 <li class="nav-item"><a href="/">Accueil</a></li>
-                <li class="nav-item"><a href="#">Planning</a></li>
-                <li class="nav-item"><a href="/contactForm">Contact</a></li>
                 
+                <li class="nav-item"><a href="/Histoire">Histoire</a></li>
+                
+                <% if (locals.isLogged === true) { %>
+                    <li class="nav-item"><a href="#">Planning</a></li>
+                 <% } %>
+                 
+                 <li class="nav-item"><a href="/contactForm">Contact</a></li>
+                 
+                 <% if (locals.isLogged === true) { %>
+                <li class="nav-item"><a href="/commande">Boutique</a></li>
+                 <% } else { %>
+                 <% } %>
             </ul>
             
-        </nav>
+        </nav> 
+        <div>
+                
+            </div>
+    </div>
+
+<div class="menu-bg" id="menu-bg"></div>
+        
     </header>
 

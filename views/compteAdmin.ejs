@@ -1,0 +1,43 @@
+<%- include('header') -%>
+
+<body>
+    
+    <div class="user-list">
+    <h1 class="h1listeUser">Liste des Utilisateurs</h1>
+    <table class="user-table">
+        <tr>
+            <th>ID</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Rôle</th>
+            <th>Âge</th>
+            <th>Taille</th>
+            <th>Poids</th>
+            <th>Adresse</th>
+            <th>Choix de la formule</th>
+            <!-- Ajoute d'autres entêtes de colonnes au besoin -->
+        </tr>
+        <% for(let user of users) { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.prename %></td>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.role %></td>
+                <td><%= user.age %></td>
+                <td><%= user.taille %></td>
+                <td><%= user.poids %></td>
+                <td><%= user.adresse %></td>
+                <td><%= user.choixformule %></td>
+                <td><a href="/modifierUser/<%= user.id %>">Modifier</a></td>
+                <td><a href="/pageCommande/user/<%= user.id %>">Commande</a></td>
+                <td><a href="/deleteUserAdmin/<%= user.id %>">Supprimer</a></td>
+                <!-- Ajoute d'autres données de l'utilisateur au besoin -->
+            </tr>
+        <% } %>
+    </table>
+</div>
+
+    
+<%- include('footer') -%>

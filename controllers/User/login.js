@@ -38,10 +38,15 @@ export default (req, res) => {
                         password: results[0].password,
                         role: results[0].role
                     };
+                    
+                    
+                    
                     console.log(req.session);
-                    res.redirect('/');
-                }
-                else {
+                   // Redirection en fonction du rôle
+                   
+                        res.redirect('/'); // Redirige vers la page home en tant qu'admin
+                    
+                } else {
                     res.status(400).send('Identifiants incorrects');
                 }
             });

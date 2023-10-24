@@ -19,13 +19,16 @@ export default (req, res) => {
             name: req.body.name,
             email: req.body.email,
             age: req.body.age,
+            taille: req.body.taille,
+            poids: req.body.poids,
             adresse: req.body.adresse,
+            choixformule: req.body.choixformule,
             password: hash,
-            role: 'admin'
+            role: 'boxeur'
         }
         query(
-            'INSERT INTO User (id,prename,name, email, age, adresse, password, role) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)',
-            [user.id, user.prename, user.name, user.email, user.age, user.adresse, user.password, user.role],
+            'INSERT INTO User (id,prename,name, email, age, taille, poids, adresse, choixformule, password, role) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            [user.id, user.prename, user.name, user.email, user.age, user.taille, user.poids, user.adresse, user.choixformule, user.password, user.role],
             (error, result) => { 
                 if(error) {
                     console.error(error);
